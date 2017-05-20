@@ -25,10 +25,11 @@ public class ServerCore {
         
         //http://localhost:8080/getCurrentPostion
         get("/getCurrentPostion", (request, response) -> {
+            response.status(200);
+            response.type("application/json");
             return gson.toJson(route.getCurrentPosition());
         });
         
-        //WORKS ONLY WITH ID = 1, MOCKED...
         //http://localhost:8080/setGate
         post("/setGate", (request, response) -> {
             route.setGate(Integer.parseInt(request.queryParams("id")));
@@ -38,12 +39,29 @@ public class ServerCore {
         });
         
         //THIS WILL WORK ONLY IF GATE IS SET
+        //WORKS ONLY WITH ID = 1, MOCKED...
         //http://localhost:8080/getRouteToGate
         get("/getRouteToGate", (request, response) -> {
+            response.status(200);
+            response.type("application/json");
             return gson.toJson(route.getRoute());
         });
         
-        
+        //http://localhost:8080/getGate
+        get("/getGate", (request, response) -> {
+            response.type("application/json");
+            int gate = route.getGate();
+            if( gate ==-1)
+            {
+                response.status(204);
+                return gson.toJson("Gate not set");
+            }
+            else
+            {
+                response.status(200);
+                return gson.toJson(gate);
+            }
+        });
     }
 
 }

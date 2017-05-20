@@ -88,7 +88,14 @@ public class Route {
     
     public int getGate()
     {
-        return this.gate;
+        if(gate>=0 && gate<=10)
+        {
+            return this.gate+1;
+        }
+        else if(gate>=11 && gate<=20)
+            return this.gate+9;
+        else
+            return this.gate;
     }
     
     public Position[] getGatePosition()
