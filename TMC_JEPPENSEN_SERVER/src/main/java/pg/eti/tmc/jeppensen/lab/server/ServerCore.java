@@ -9,28 +9,8 @@ import static spark.Spark.*;
  */
 public class ServerCore {
     
-    private static Gson gson;
-    
-    private static class GsonExample
-    {
-        private int ID;
-
-        public int getID() {
-            return ID;
-        }
-
-        public void setID(int ID) {
-            this.ID = ID;
-        }
-        
-    }
-    
-    private static String jsonTest()
-    {
-        GsonExample example = new GsonExample();
-        example.setID(15);
-        return gson.toJson(example);
-    } 
+    private static Route route = new Route();
+    private static Gson gson = new Gson();
     
     public static void main(String[] args) {
         //GSON INIT
@@ -43,20 +23,27 @@ public class ServerCore {
         //SOME UNIX MACHINES WILL RESERVE ALL PORTS BELOW 1024 FOR ROOT USERS
         port(8080);
         
-        //EXAMPLES--------------------------------------------------------------
-        
-        //SIMPLE GET: http://localhost:8080/hello
-        get("/hello", (req, res) -> "Hello World");
-        //GET WITH PARAMS: http://localhost:8080/hello/piotr
-        get("/hello/:name", (request, response) -> {
-            return "Hello: " + request.params(":name");
+        //http://localhost:8080/getCurrentPostion
+        get("/getCurrentPostion", (request, response) -> {
+            return gson.toJson(route.getCurrentPosition());
         });
-        //EXAMPLE OF RETURNING JSON OBJECT
-        get("/json", (request, response) -> jsonTest());
         
-        //POST/PUT/DELETE ARE ANALOGICAL
+        //WORKS ONLY WITH ID = 1, MOCKED...
+        //http://localhost:8080/setGate
+        post("/setGate", (request, response) -> {
+            route.setGate(Integer.parseInt(request.queryParams("id")));
+            response.status(200);
+            response.type("application/json");
+            return gson.toJson("OK");
+        });
         
-        //EXAMPLES--------------------------------------------------------------
+        //THIS WILL WORK ONLY IF GATE IS SET
+        //http://localhost:8080/getRouteToGate
+        get("/getRouteToGate", (request, response) -> {
+            return gson.toJson(route.getRoute());
+        });
+        
+        
     }
 
 }
