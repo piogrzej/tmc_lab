@@ -15,12 +15,12 @@ import java.util.List;
 public class Route {
     
     private static final int GATE_COUNT = 21;
-    private static final int PLANE_SPEED = 40;//WARNING: HIGER VALUE MEANS PLANE SPEED IS LOWER
+    protected static final int PLANE_SPEED = 40;//WARNING: HIGER VALUE MEANS PLANE SPEED IS LOWER
     
-    private Position[] gatesPostions= new Position[GATE_COUNT]; 
-    private List<Position> route = new ArrayList<Position>();
+    protected Position[] gatesPostions= new Position[GATE_COUNT]; 
+    protected List<Position> route = new ArrayList<Position>();
     protected int gate = -1;
-    private Position lastPosition = null;
+    protected Position lastPosition = null;
 
     public Route() {
         //PREDEFINED GATES POSITION IN GDANSK'S AIRPORT
