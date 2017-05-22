@@ -9,10 +9,10 @@ import static spark.Spark.*;
  */
 public class ServerCore {
     
-    private static Route route = new Route();
-    private static Gson gson = new Gson();
+    private Route route = new Route();
+    private Gson gson = new Gson();
     
-    public static void main(String[] args) {
+    public void initServer() {
         //GSON INIT
         gson = new GsonBuilder().create();
         
@@ -23,13 +23,26 @@ public class ServerCore {
         //SOME UNIX MACHINES WILL RESERVE ALL PORTS BELOW 1024 FOR ROOT USERS
         port(8080);
         
+        //Available endpoints
+        getCurrentPostion();
+        
+        setGate();
+        
+        getRouteToGate();
+        
+        getGate();
+    }
+    
+    public void getCurrentPostion() {
         //http://localhost:8080/getCurrentPostion
         get("/getCurrentPostion", (request, response) -> {
             response.status(200);
             response.type("application/json");
             return gson.toJson(route.getCurrentPosition());
-        });
-        
+        });          
+    }
+    
+    public void setGate() {
         //http://localhost:8080/setGate
         post("/setGate", (request, response) -> {
             route.setGate(Integer.parseInt(request.queryParams("id")));
@@ -37,7 +50,9 @@ public class ServerCore {
             response.type("application/json");
             return gson.toJson("OK");
         });
-        
+    }
+    
+    public void getRouteToGate() {
         //THIS WILL WORK ONLY IF GATE IS SET
         //WORKS ONLY WITH ID = 1, MOCKED...
         //http://localhost:8080/getRouteToGate
@@ -46,7 +61,9 @@ public class ServerCore {
             response.type("application/json");
             return gson.toJson(route.getRoute());
         });
-        
+    }
+    
+    public void getGate() {
         //http://localhost:8080/getGate
         get("/getGate", (request, response) -> {
             response.type("application/json");
@@ -64,4 +81,8 @@ public class ServerCore {
         });
     }
 
+    public static void main(String[] args) {
+        ServerCore server = new ServerCore();
+        server.initServer();
+    }
 }
