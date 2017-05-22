@@ -9,7 +9,7 @@ import static spark.Spark.*;
  */
 public class ServerCore {
     
-    private Route route = new Route();
+    protected Route route = new Route();
     private Gson gson = new Gson();
     
     public void initServer() {
@@ -68,7 +68,7 @@ public class ServerCore {
         get("/getGate", (request, response) -> {
             response.type("application/json");
             int gate = route.getGate();
-            if( gate ==-1)
+            if( gate == -1)
             {
                 response.status(204);
                 return gson.toJson("Gate not set");
