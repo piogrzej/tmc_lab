@@ -19,7 +19,7 @@ public class Route {
     
     private Position[] gatesPostions= new Position[GATE_COUNT]; 
     private List<Position> route = new ArrayList<Position>();
-    private int gate = -1;
+    protected int gate = -1;
     private Position lastPosition = null;
 
     public Route() {
