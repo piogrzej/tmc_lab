@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>20</y>
+      <w>1490</w>
+      <h>850</h>
+    </coordinates>
+    <panel_attributes>fontsize=40
+*PLANE*
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>80</y>
+      <w>1470</w>
+      <h>780</h>
+    </coordinates>
+    <panel_attributes>fontsize=30
+*LOCAL NETWORK*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>200</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>fontsize=20
+*PILOT 1*
+*WEB CLIENT*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1110</x>
+      <y>200</y>
+      <w>220</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>fontsize=20
+*PILOT 2*
+*WEB CLIENT*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>590</y>
+      <w>440</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>fontsize=30
+*Server*
+--
+- Set gate
+- Get gate
+- Get route to gate
+- Get current plane position</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>820</x>
+      <y>240</y>
+      <w>420</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+fontsize=20
+http get/post</panel_attributes>
+    <additional_attributes>10.0;350.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>260</x>
+      <y>240</y>
+      <w>470</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+fontsize=20
+http get/post</panel_attributes>
+    <additional_attributes>450.0;350.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

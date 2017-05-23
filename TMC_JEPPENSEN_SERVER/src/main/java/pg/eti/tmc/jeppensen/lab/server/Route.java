@@ -55,17 +55,40 @@ public class Route {
             this.gate=gateNum-1;
             //MOCK OF ROUTE TO GATE 1
             route.add(new Position(54.3456, 18.6095));
-            route.add(new Position(54.37997, 18.45654));
-            route.add(new Position(54.38057, 18.45601));
-            route.add(new Position(54.38150, 18.45693));
-            route.add(new Position(54.37768, 18.47296));
+            route.add(new Position(54.3717, 18.4900));
+            route.add(new Position(54.3802, 18.4557));
+            route.add(new Position(54.38130, 18.45658));
+            route.add(new Position(54.38149, 18.45756));
+            route.add(new Position(54.37767, 18.47304));
             route.add(gatesPostions[gateNum]);
         }
         else if(gateNum==2)
         {
             this.gate=gateNum-1;
+            //MOCK OF ROUTE TO GATE 2
+            route.add(new Position(54.3456, 18.6095));
+            route.add(new Position(54.3717, 18.4900));
+            route.add(new Position(54.3802, 18.4557));
+            route.add(new Position(54.38130, 18.45658));
+            route.add(new Position(54.38149, 18.45756));
+            route.add(new Position(54.37767, 18.47304));
+            route.add(new Position(54.37886, 18.47382));
+            route.add(new Position(54.37903, 18.47364));
+            route.add(gatesPostions[gateNum]);
         }
-        else if(gateNum==3) this.gate=gateNum-1;
+        else if(gateNum==3)
+        {
+            this.gate=gateNum-1;
+            //MOCK OF ROUTE TO GATE 3
+            route.add(new Position(54.3456, 18.6095));
+            route.add(new Position(54.3717, 18.4900));
+            route.add(new Position(54.3802, 18.4557));
+            route.add(new Position(54.38130, 18.45658));
+            route.add(new Position(54.38149, 18.45756));
+            route.add(new Position(54.3779, 18.4718));
+            route.add(new Position(54.3792, 18.4728));
+            route.add(gatesPostions[gateNum]);
+        }
         else if(gateNum==4) this.gate=gateNum-1;
         else if(gateNum==5) this.gate=gateNum-1;
         else if(gateNum==6) this.gate=gateNum-1;
