@@ -1,0 +1,19 @@
+SERWER:
+
+1. Połączenie z serwerem.
+2. Wybieranie bramek.
+3. Określenie pozycji samolotu.
+4. Odebranie wiadomości o wybranej bramce.
+5. Wyznaczanie punktów trasy:
+	- zdefiniowane na sztywno trasy(prototypowo dwie alternatywne trasy dla jednej bramki)
+
+KLIENT:
+
+1. Wyświetlanie statusu połączenia.
+2. Wyrysowanie mapy.
+3. Wybór bramki.
+4. Zaznaczenie pozycji samolotu.
+5. Wyrysowanie trasy samolotu do bramki:
+	- warstwa tras na lotnisku
+6. Komunikat o wyłączeniu trasy przez jednego z pilotów.
+
