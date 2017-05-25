@@ -15,8 +15,8 @@ GET: http://localhost:8080/getGate
 GET: http://localhost:8080/getRouteToGate  
 4) To get current plane position (MOCKED, srtight line from Gdansk Wzgorze Mickiewicza to Airport)  
 GET: http://localhost:8080/getCurrentPosition  
-5) To get gates positions
-GET: http://localhost:8080/getGatesPositions
+5) To get gates positions  
+GET: http://localhost:8080/getGatesPositions  
 
 #### To run tests in NetBeans
 
@@ -31,7 +31,7 @@ Click right button on test class(Test Packages) then click Test File.
 Michalina Kukiełko  
 Przemysław Studziński  
 Piotr Grzejszczyk  
-Kamil Bielecki
-Jacek Kuś
-Kuba Kowalczuk
-Damian Radawiec
+Kamil Bielecki  
+Jacek Kuś  
+Kuba Kowalczuk  
+Damian Radawiec  
