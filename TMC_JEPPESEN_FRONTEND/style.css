@@ -4,36 +4,39 @@
 }
 
 .nav {
-	width: 100%;
-	overflow: hidden;
-	height: auto;
-
+    width: 100%;
+    overflow: hidden;
+    height: auto;
 }
+
 .connection {
-	float: right;
-	padding: 10px;
-	margin: 5px;
-	width: auto;
+    float: right;
+    padding: 10px;
+    margin: 5px;
+    width: auto;
 }
-#connection_diod{
 
-	margin-top: 10px;
-	width: 30px;
-	height: 30px;
-	background-color: green;
-	border-radius: 25px;
-	float:right;
+#connection_diod {
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    border-radius: 25px;
+    float: right;
 }
+
 .gate {
-	width: auto;
-	float: left;
-	padding: 10px;
-	margin: 5px;
+    width: auto;
+    float: left;
+    padding: 10px;
+    margin: 5px;
 }
+
 p {
-	float: left;
-	padding-right: 10px;
+    float: left;
+    padding-right: 10px;
 }
+
 select {
-	margin-top: 14px;
+    margin-top: 14px;
 }

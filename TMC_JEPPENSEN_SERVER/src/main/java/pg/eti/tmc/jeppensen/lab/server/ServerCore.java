@@ -31,11 +31,13 @@ public class ServerCore {
         getRouteToGate();
         
         getGate();
+        
+        getGatesPositions();
     }
     
     public void getCurrentPostion() {
         //http://localhost:8080/getCurrentPostion
-        get("/getCurrentPostion", (request, response) -> {
+        get("/getCurrentPosition", (request, response) -> {
             response.status(200);
             response.type("application/json");
             return gson.toJson(route.getCurrentPosition());
@@ -44,7 +46,7 @@ public class ServerCore {
     
     public void setGate() {
         //http://localhost:8080/setGate
-        post("/setGate", (request, response) -> {
+        get("/setGate", (request, response) -> {
             route.setGate(Integer.parseInt(request.queryParams("id")));
             response.status(200);
             response.type("application/json");
@@ -81,6 +83,15 @@ public class ServerCore {
         });
     }
 
+    public void getGatesPositions() {
+        //http://localhost:8080/getGatesPositions
+        get("/getGatesPositions", (request, response) -> {
+            response.status(200);
+            response.type("application/json");
+            return gson.toJson(route.getGatePosition());
+        });
+    }
+    
     public static void main(String[] args) {
         ServerCore server = new ServerCore();
         server.initServer();

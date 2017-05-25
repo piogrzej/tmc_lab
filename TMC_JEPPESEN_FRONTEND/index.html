@@ -1,66 +1,65 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <link rel="stylesheet" href="https://openlayers.org/en/v4.1.1/css/ol.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://openlayers.org/en/v4.1.1/build/ol.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>TMC Jeppensen</title>
-  </head>
-  <body>
-    <div class="nav">
-    <div class="gate">
-      <p>Choose gate:</p>
-      <select>
-        <option value="g1">1</option>
-        <option value="g2">2</option>
-        <option value="g3">3</option>
-        <option value="g4">4</option>
-        <option value="g5">5</option>
-        <option value="g6">6</option>
-        <option value="g7">7</option>
-        <option value="g8">8</option>
-        <option value="g9">9</option>
-        <option value="g10">10</option>
-        <option value="g11">11</option>
-        <option value="g12">12</option>
-        <option value="g13">13</option>
-        <option value="g14">14</option>
-        <option value="g15">15</option>
-        <option value="g16">16</option>
-        <option value="g17">17</option>
-        <option value="g18">18</option>
-        <option value="g19">19</option>
-        <option value="g20">20</option>
-        <option value="g21">21</option>
-        <option value="g22">22</option>
-        <option value="g23">23</option>
-        <option value="g24">24</option>
-        <option value="g25">25</option>
-        <option value="g26">26</option>
-        <option value="g27">27</option>
-        <option value="g28">28</option>
-        <option value="g28A">28A</option>
-      </select>
-    </div>
-    <div class="connection">
-      <p>Connection status:</p> 
-      <div id="connection_diod"><!--TODO: if connected background-color: green, else red --></div>
-    </div>
-    </div>
-
-    <div id="map" class="map"></div>
+    <script src="scripts.js" type="text/javascript"></script>
     <script type="text/javascript">
-      var osmMap = new ol.layer.Tile({
-            source: new ol.source.OSM()
-          });
-      var map = new ol.Map({
-        target: 'map',
-        layers: [osmMap],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([18.467846,54.378679]),
-          zoom: 15
-        })
-      });
+        $(document).ready(function () {
+            init();
+        });
+        setInterval(function () { getPlanePosition() }, 1000);
     </script>
-  </body>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <div class="gate">
+            <p>Choose gate:</p>
+            <select id="selectId" onchange="if (this.selectedIndex) selectionChanged(this.selectedIndex);">
+                <option selected="selected" value="g0"></option>
+                <option value="g1">1</option>
+                <option value="g2">2</option>
+                <option value="g3">3</option>
+                <option value="g4">4</option>
+                <option value="g5">5</option>
+                <option value="g6">6</option>
+                <option value="g7">7</option>
+                <option value="g8">8</option>
+                <option value="g9">9</option>
+                <option value="g10">10</option>
+                <option value="g11">11</option>
+                <option value="g12">12</option>
+                <option value="g13">13</option>
+                <option value="g14">14</option>
+                <option value="g15">15</option>
+                <option value="g16">16</option>
+                <option value="g17">17</option>
+                <option value="g18">18</option>
+                <option value="g19">19</option>
+                <option value="g20">20</option>
+                <option value="g21">21</option>
+                <option value="g22">22</option>
+                <option value="g23">23</option>
+                <option value="g24">24</option>
+                <option value="g25">25</option>
+                <option value="g26">26</option>
+                <option value="g27">27</option>
+                <option value="g28">28</option>
+                <option value="g28A">28A</option>
+            </select>
+        </div>
+        <div class="connection">
+            <p>Connection status:</p>
+            <div id="connection_diod"></div>
+        </div>
+    </div>
+    <div id="map" class="map"></div>
+</body>
 </html>

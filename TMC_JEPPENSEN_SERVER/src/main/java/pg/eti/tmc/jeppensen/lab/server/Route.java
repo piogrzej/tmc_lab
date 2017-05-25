@@ -49,6 +49,7 @@ public class Route {
     
     public void setGate(int gateNum)
     {
+        route.clear();
         //TODO MORE MOCKS OF ROUTES
         if(gateNum==1)
         {
