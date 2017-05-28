@@ -15,7 +15,7 @@ import java.util.List;
 public class Route {
     
     private static final int GATE_COUNT = 21;
-    protected static final int PLANE_SPEED = 40;//WARNING: HIGER VALUE MEANS PLANE SPEED IS LOWER
+    protected static final int PLANE_SPEED = 20;//WARNING: HIGER VALUE MEANS PLANE SPEED IS LOWER
     
     protected Position[] gatesPostions= new Position[GATE_COUNT]; 
     protected List<Position> route = new ArrayList<Position>();
@@ -52,7 +52,7 @@ public class Route {
         route.clear();
         //TODO MORE MOCKS OF ROUTES
         if(gateNum==1)
-        {
+        { 
             this.gate=gateNum-1;
             //MOCK OF ROUTE TO GATE 1
             route.add(new Position(54.3456, 18.6095));
@@ -61,7 +61,7 @@ public class Route {
             route.add(new Position(54.38130, 18.45658));
             route.add(new Position(54.38149, 18.45756));
             route.add(new Position(54.37767, 18.47304));
-            route.add(gatesPostions[gateNum]);
+            route.add(gatesPostions[gateNum-1]);
         }
         else if(gateNum==2)
         {
@@ -75,7 +75,7 @@ public class Route {
             route.add(new Position(54.37767, 18.47304));
             route.add(new Position(54.37886, 18.47382));
             route.add(new Position(54.37903, 18.47364));
-            route.add(gatesPostions[gateNum]);
+            route.add(gatesPostions[gateNum-1]);
         }
         else if(gateNum==3)
         {
@@ -88,7 +88,7 @@ public class Route {
             route.add(new Position(54.38149, 18.45756));
             route.add(new Position(54.3779, 18.4718));
             route.add(new Position(54.3792, 18.4728));
-            route.add(gatesPostions[gateNum]);
+            route.add(gatesPostions[gateNum-1]);
         }
         else if(gateNum==4) this.gate=gateNum-1;
         else if(gateNum==5) this.gate=gateNum-1;
@@ -135,12 +135,11 @@ public class Route {
     public Position getCurrentPosition()
     {
         //THIS IS MOCK
-        //RETURNS POSITION IN LINE BETWEEN GDANSK WZGORZE MICKIEWICZA AND GDANSK'S AIRFILED
-        double x2 = 54.3717;
-        double y2 = 18.4900;
-        double x1 = 54.3456;
-        double y1 = 18.6095;
-
+        //RETURNS POSITION IN LINE BETWEEN GDANSK SĄSIEDZKA AND GDANSK'S AIRFILED
+        double x2 = 54.3715; 
+        double y2 = 18.4917;
+        double x1 = 54.3660;
+        double y1 = 18.5193;
         if(this.lastPosition==null)
         {
             this.lastPosition= new Position(x1,y1);

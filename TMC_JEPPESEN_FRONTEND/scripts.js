@@ -1,6 +1,6 @@
 var planeX;
 var planeY;
-var selectedGate = 1;
+var selectedGate = 0;
 var gates = [];
 var routeToGate = [];
 var routePoints = [];
@@ -49,8 +49,8 @@ function init (){
         target: 'map',
         layers: [osmMap, gatesLayer, planeLayer, routeLayer],
         view: new ol.View({
-        center: ol.proj.fromLonLat([18.467846,54.378679]),
-        zoom: 15
+        center: ol.proj.fromLonLat([18.4824,54.3751]),
+        zoom: 14.75
         })
     });
 	setGate();
