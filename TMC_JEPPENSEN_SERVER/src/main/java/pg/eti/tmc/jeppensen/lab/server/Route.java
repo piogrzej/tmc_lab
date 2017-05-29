@@ -136,10 +136,10 @@ public class Route {
     {
         //THIS IS MOCK
         //RETURNS POSITION IN LINE BETWEEN GDANSK SĄSIEDZKA AND GDANSK'S AIRFILED
-        double x2 = 54.3715; 
-        double y2 = 18.4917;
-        double x1 = 54.3660;
-        double y1 = 18.5193;
+        double x2 = 54.37128;
+        double y2 = 18.49172;
+        double x1 = 54.3669;
+        double y1 = 18.5104;
         if(this.lastPosition==null)
         {
             this.lastPosition= new Position(x1,y1);

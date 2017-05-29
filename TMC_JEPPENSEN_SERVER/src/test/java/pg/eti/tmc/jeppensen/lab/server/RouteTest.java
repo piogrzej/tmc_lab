@@ -27,10 +27,10 @@ public class RouteTest {
        
     @BeforeClass
     public static void setUpClass() {
-        x2 = 54.3717;
-        y2 = 18.4900;
-        x1 = 54.3456;
-        y1 = 18.6095;
+        x2 = 54.37128;
+        y2 = 18.49172;
+        x1 = 54.3669;
+        y1 = 18.5104;
     }
     
     @AfterClass

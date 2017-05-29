@@ -48,8 +48,8 @@ public class ServerCoreIT {
         expect().
         statusCode(200).
         body(
-            "x", equalTo(54.3456),
-            "y", equalTo(18.6095)).        
+            "x", equalTo(54.3669),
+            "y", equalTo(18.5104)).        
         when().
         get("http://localhost:8080/getCurrentPostion");
     }
