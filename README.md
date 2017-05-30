@@ -33,5 +33,5 @@ Przemysław Studziński
 Piotr Grzejszczyk  
 Kamil Bielecki  
 Jacek Kuś  
-Kuba Kowalczuk  
+Jakub Kowalczuk  
 Damian Radawiec  
